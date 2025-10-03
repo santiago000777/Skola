@@ -31,6 +31,12 @@ int main(int argc, char* argv[]) {
 		printf("Parameter %d\t%s\n", i, argv[i]);
 	}
 
+	if (atoi(argv[rowCount]) <= 0) {
+		printf("Je potreba zadat cislo, ktere je vetsi nez 0.\n");
+
+		return 0;
+	}
+
 	if (strcmp(argv[mode], "head") == 0) {
 		if (argc <= rowCount) {
 			printf("Nutne zadat pocet radku\n");
@@ -52,22 +58,6 @@ int main(int argc, char* argv[]) {
 		printf("Vypis %d radku od konce souboru:\n", atoi(argv[rowCount]));
 		PrintTail(atoi(argv[rowCount]));
 	}
-
-
-
-
-	/*printf("Argumenty:\n");
-
-	for (int i = 0; i < argc; i++) {
-	printf("Parameter %d\t%s\n", i, argv[i]);
-	}
-
-	int i;
-	char name[21];
-
-	while (fscanf(stdin, "%d%20s", &i, name) == 2) {
-	printf("radek %d. = %s\n", i, name);
-	}*/
 
 	return 0;
 }
